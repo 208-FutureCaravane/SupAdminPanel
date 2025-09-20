@@ -64,6 +64,7 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
         <Box sx={{ 
           display: "flex", 
           alignItems: "center", 
+          justifyContent: "center",
           mb: 1,
           background: isLight
             ? 'linear-gradient(135deg, rgba(25,118,210,0.08) 0%, rgba(25,118,210,0.02) 100%)'
@@ -73,47 +74,22 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
           border: isLight ? '1px solid rgba(25,118,210,0.15)' : '1px solid rgba(255,255,255,0.1)'
         }}>
           <Box sx={{
-            width: 40,
-            height: 40,
-            borderRadius: 2,
-            background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            mr: 2,
-            boxShadow: "0 8px 16px rgba(25, 118, 210, 0.3)"
+            width: "100%",
+            height: 50,
           }}>
-            <DashboardIcon sx={{ color: "white", fontSize: 24 }} />
-          </Box>
-          <Box>
-            <Typography 
-              variant="h6" 
-              component="h1" 
-              sx={{ 
-                fontWeight: 800, 
-                fontSize: "1.1rem",
-                background: isLight
-                  ? 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)'
-                  : 'linear-gradient(135deg, #1976d2 0%, #1976d2CC 100%)',
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                lineHeight: 1.2
+            <img 
+              src="/LogoAdmin.svg" 
+              alt="MaidAdmin Logo" 
+              style={{
+                height: '90px',
+                width: 'auto',
+                maxWidth: '100%',
+                objectFit: 'contain'
               }}
-            >
-              RestaurantOS
-            </Typography>
-            <Typography 
-              variant="caption" 
-              sx={{ 
-                color: isLight ? inactiveLight : 'rgba(255,255,255,0.7)',
-                fontWeight: 500,
-                letterSpacing: "0.5px",
-                fontSize: "0.75rem"
-              }}
-            >
-              Admin Dashboard
-            </Typography>
+            />
           </Box>
         </Box>
       </Box>

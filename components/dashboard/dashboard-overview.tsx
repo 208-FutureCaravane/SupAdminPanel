@@ -31,6 +31,30 @@ import {
   Star as StarIcon,
 } from "@mui/icons-material"
 
+// Add keyframes for shimmer animation
+const shimmerKeyframes = `
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+`
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style')
+  style.textContent = shimmerKeyframes
+  document.head.appendChild(style)
+}
+
 interface StatCardProps {
   title: string
   value: string
@@ -135,18 +159,6 @@ function StatCard({ title, value, change, icon, color, trend }: StatCardProps) {
           >
             {icon}
           </Box>
-        </Box>
-        
-        {/* Progress indicator */}
-        <Box sx={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 4, borderRadius: "0 0 12px 12px", overflow: "hidden" }}>
-          <Box
-            sx={{
-              height: "100%",
-              background: `linear-gradient(90deg, ${color} 0%, ${color}80 100%)`,
-              width: trend === "up" ? "75%" : "45%",
-              transition: "width 2s ease-in-out",
-            }}
-          />
         </Box>
       </CardContent>
     </Card>
